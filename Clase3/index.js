@@ -5,4 +5,3 @@ for (let turno = 1; turno <=10; turno++){
 }
 
 alert ("Se acabaron los turnos");
-
