@@ -97,4 +97,3 @@ cuenta(cliente, producto, costo);
 let agregado = nuevosProductos();
 let costo2 = precioNuevosproductos(agregado);
 cuentaNuevosproductos(cliente, agregado, costo2);
-
