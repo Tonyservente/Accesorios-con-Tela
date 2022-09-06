@@ -1,3 +1,5 @@
+function container() {
+
 function nuevoNombre() {
     alert('Accesorios con tela')
 
@@ -41,7 +43,7 @@ if(seleccion == "si"){
 }
 
 while ( seleccion != "no"){
-    let pedido = prompt("Agrega un producto a tu carrito: 1) Moña  $150 2) Moña cherry $120 3) Vincha Trenzada $220 4) Vincha Fancy $210 5) Scrunchie $100 6) Scrunchie colero dream $150");
+    let pedido = prompt("Agrega un producto a tu carrito: 1) Moña  $150 \n======\n 2) Moña cherry $120 \n======\n 3) Vincha Trenzada $220 \n======\n 4) Vincha Fancy $210 \n======\n 5) Scrunchie $100 \n======\n 6) Scrunchie colero dream $150");
     let precio = 0;
 
     productoElegido= productos.find(item => item.nombre=pedido);
@@ -50,7 +52,7 @@ while ( seleccion != "no"){
     if (productoElegido!== "undefined"){
         let colorProducto= productoElegido.color;
         let colores= colorProducto.join(" - ");
-        alert(`Colores disponibles: ${colores}`);
+        seleccion = prompt(`Colores disponibles: ${colores}`);
         let  unidades = parseInt(prompt("Cuantas unidades desea agregar"));
 
     carrito.push({ nombreVenta: productoElegido.nombre, unidadesVenta: unidades, precioVenta: productoElegido.precio});
@@ -73,6 +75,8 @@ while ( seleccion != "no"){
     }
 }
 
-const total = carrito.reduce((acc, el) => acc + el.precio * el.unidades, 0);
+const total = carrito.reduce((acc, el) => {acc + (el.precio * el.unidades)}, 0);
 alert(`el total a pagar de su compra es de: ${total}`);
+
+}
 
