@@ -128,11 +128,10 @@ function container() {
           if (productos.id == validarObj) {
             arraydeProductos = {
               id: productos.id,
-              titulo: productos.titulo,
+              nombre: productos.nombre,
               precio: productos.precio,
               cantidad: productos.cantidad,
             };
-            return arraydeProductos;
           }
         });
         agregandoalCarrito(arraydeProductos);
@@ -141,7 +140,7 @@ function container() {
       function agregandoalCarrito(arraydeProductos) {
         const acumulado = carritoComprar.some((elemento) => elemento.id == validarObj);
         if (acumulado == false) {
-          const nuevoCarrito = new Productos(arraydeProductos);
+          const nuevoCarrito = new Productos(id, nombre, precio, cantidad);
           carritoComprar.push(nuevoCarrito);
           alert(`Con tela joyeria // CARRITO :\n\nAgregaste -- > ${arraydeProductos.nombre}`);
         }
