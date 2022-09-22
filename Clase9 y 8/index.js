@@ -1,3 +1,4 @@
+
 class Producto {
     constructor(id, nombre, precio, foto) {
         this.id = id;
@@ -20,8 +21,9 @@ class ElementoCarrito {
 const estandarDolaresAmericanos = Intl.NumberFormat('en-US');
 
 //Arrays donde guardaremos catálogo de productos y elementos en carrito
-const productos = [];
 const elementosCarrito = [];
+
+const productos = [];
 
 const contenedorProductos = document.getElementById('contenedor-productos');
 
@@ -35,6 +37,13 @@ const contenedorFooterCarrito = document.querySelector("#footer");
 
 cargarProductos();
 cargarCarrito();
+if (localStorage.getItem('carrito')){
+    let carrito=JSON.parse(localStorage.getItem('carrito'));
+    for (var i=0; i <carrito.length;i++){
+        elementosCarrito.push(new ElementoCarrito(carrito[i].producto, carrito[i].cantidad));
+    }
+}
+
 dibujarCarrito();
 dibujarCatalogoProductos();
 
@@ -54,7 +63,7 @@ function cargarProductos() {
 
 function cargarCarrito() {
     /*let elementoCarrito = new ElementoCarrito(
-        new Producto(1, 'Moña', 1.99, './img/muffin.jpg'),
+        new Producto(1, 'Moña', 150, './img/muffin.jpg'),
         1
     );
 
@@ -99,10 +108,10 @@ function dibujarCarrito() {
                 
                 dibujarCarrito();
             });
-
+            
         }
     );
-
+    
     const valorInicial = 0;
     const totalCompra = elementosCarrito.reduce(
         (previousValue, currentValue) => previousValue + currentValue.producto.precio*currentValue.cantidad,
@@ -117,12 +126,6 @@ function dibujarCarrito() {
 
 }
 
-function removerProductoCarrito(elementoAEliminar) {
-    const elementosAMantener = elementosCarrito.filter((elemento) => elementoAEliminar.producto.id != elemento.producto.id);
-    elementosCarrito.length = 0;
-
-    elementosAMantener.forEach((elemento) => elementosCarrito.push(elemento));
-}
 
 function crearCard(producto) {
     //Botón
@@ -158,6 +161,7 @@ function crearCard(producto) {
     //contenedorCarta.append(carta);
 
     //Agregar algunos eventos
+    
     botonAgregar.onclick = () => {
         //alert("Hiciste click en el botón del producto:" + producto.id);
 
@@ -192,14 +196,11 @@ function crearCard(producto) {
                 const myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {keyboard: true});
                 const modalToggle = document.getElementById('toggleMyModal'); 
                 myModal.show(modalToggle);
-            } else {
-                swal("Si quiere continuar su compra, por favor dirigase al carrito de compras. Gracias!");
             }
+            guardarCarritoEnLocalStorage();
         });
 
     }
-   
-
     return carta;
 
 }
@@ -214,5 +215,64 @@ function dibujarCatalogoProductos() {
         }
     );
 
+}
+
+let comprafinalizada = document.getElementById(`comprafinalizada`);
+    comprafinalizada.addEventListener('click', () => {
+         salir();
+});
+
+function salir() {
+    if (elementosCarrito.length == 0) {
+      swal('Con tela joyeria \n\nGracias Por tu Visita. Te Esperamos Pronto!');
+      return;
+    } else {
+      swal('Con tela joyeria\n\nPuedes retirar tu pedido en Despacho! Gracias Por tu Compra, te Esperamos Pronto');
+      return;
+    }
+}
+
+const registro = document.getElementById("registro");
+const login = document.getElementById("login");
+const registronone = document.getElementById("registronone");
+const loginnone = document.getElementById("loginnone");
+
+
+// CREO DOS EVENTOS PARA CUANDO SE HACE CLICK EN LOS BOTONES APARESCA O DESPARECAN LOS MODALES DEL REGISTRO Y LOGIN
+registro.addEventListener("click", () => {
+    registronone.classList.toggle("d-none");
+    loginnone.classList.add("d-none");
+})
+
+login.addEventListener("click", () => {
+    loginnone.classList.toggle("d-none");
+    registronone.classList.add("d-none");
+})
+
+// ME TRAIGO EL FORMULARIO Y LUEGO AL HACER SUBMIT EJECUTO
+// LA FUNCION REGISTROFORM QUE TOMA EL VALUE Y LO GUARDA EN EL SESSION
+
+const formregistro = document.getElementById("formRegistro");
+formregistro.addEventListener("submit", registroform);
+
+// ME TRAIGO EL FORMULARIO LOGIN Y LUEGO DEL SUBMIT COMPARO LOS DATOS INGRESADOS EN EL SESSIONSTORE
+// CON LOS TARGET INGRESADOS EN EL FORMULARIO LOGIN
+
+const formlogin = document.getElementById("formLogin");
+formlogin.addEventListener("submit", loginform);    
+
+// HAGO UN STRINGIFY DE CARRITO  Y SE GUARDA EN LA KEY CARRITO
+
+function guardarCarritoEnLocalStorage() {
+    LocalStorage.setItem("carrito", JSON.stringify(carrito));
+}
+
+export function cargarCarritoDeLocalStorage() {
+    // ¿Existe un carrito previo guardado en LocalStorage?
+    if (LocalStorage.getItem("carrito") !== null) {
+        // Carga la información
+        carrito = JSON.parse(LocalStorage.getItem("carrito"));
+        actualizarCarrito();
+    }
 }
 

@@ -1,0 +1,341 @@
+.header__logo {
+    width: 150px;
+    /*     filter: brightness(1.1);
+      mix-blend-mode: multiply;
+      transition: transform 0.2s; */
+  }
+  
+  header {
+    background-color: rgba(248, 249, 250);
+  }
+  
+  header a {
+    display: block;
+    padding-right: 0;
+    padding-left: 0;
+    color: #e99fb7;
+    text-decoration: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+  }
+
+  #titulo {
+    position: relative;
+    z-index: 10;
+    color: white;
+  }
+  
+  #loginnone {
+    background-color: #fff;
+    width: 600px;
+    max-width: 100%;
+    padding: 30px 50px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  #registronone {
+    background-color: #fff;
+    width: 600px;
+    max-width: 100%;
+    padding: 30px 50px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  .titulo {
+    color: white;
+    z-index: 1;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .subtitulo {
+    color: white;
+    z-index: 2;
+  }
+  
+  .nav-item {
+    transition: transform 0.2s;
+  }
+  
+  .nav-item:hover {
+    transform: scale(1.2);
+  }
+
+    .btn-danger {
+    background-color:rgb(253, 7, 7);
+    border-color: white;
+    color: white;
+  }
+  
+  .btn-success {
+    background-color: #dc3545;
+    border-color: #dc3545 ;
+    color: white;
+  }
+  
+  header a {
+    color: #c8956e !important;
+  }
+  
+  .mover {
+    right: 0 !important;
+  }
+  
+  .hero {
+    height: 80vh;
+    position: relative;
+    background-image: url(./img/fondo.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(0deg, black 0%, rgba(0, 212, 255, 0) 100%);
+  }
+  
+  #registro {
+    position: relative;
+    z-index: 1;
+  }
+  
+  #login {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .caja {
+    background-color: grey;
+  }
+  
+  .formulario {
+    width: 300px;
+  }
+  
+  .registronone1 {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+  }
+  
+  .loginnone {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    right: 0;
+    z-index: 2;
+  }
+  
+  h2 img {
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+  }
+  
+  #arreglo {
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+  }
+  
+  .modalCarrito {
+    background-color: #462731;
+    width: 320px;
+    min-height: 400px;
+    border-radius: 15px;
+    position: fixed;
+    right: 0;
+    top: 5;
+    z-index: 100;
+    color: #c8956e;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    transition: all 0.9s;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+  }
+
+
+.modalCarrito__items {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .modalCarrito__botones {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: space-between;
+  }
+  
+  .fa-circle-xmark {
+    color: white;
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    font-size: 20px;
+  }
+  
+  #botondemodal {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    width: 150px;
+    height: 150px;
+  }
+  
+  #botondemodal i {
+    font-size: 30px;
+  }
+  .botoncitolindo {
+    width: 80px;
+    height: 80px;
+    font-size: 40px;
+    position: fixed;
+    right: 3%;
+    bottom: 3%;
+    border-radius: 50%;
+    border: 0;
+    transition: all 0.2s;
+    color: #4b3131;
+    background-image: radial-gradient(circle at 50% -20.71%, #ffd679 0, #ffc776 12.5%, #fbb674 25%, #eca371 37.5%, #d8906c 50%, #c27e67 62.5%, #af6f62 75%, #9e645e 87.5%, #8f5a5a 100%);
+    text-shadow: 4px 4px 10px #4b3131;
+    z-index: 999999;
+  }
+  
+  .botoncitolindo:hover {
+    transform: scale(1.2);
+  }
+
+  .Precioproducto {
+    font-family: 'DynaPuff';
+  }
+  
+  .footer {
+    background-color: #24262b;
+    color: white;
+    height: 280px;
+  }
+  
+  .footer__h4 {
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    font-weight: 500;
+    position: relative;
+  }
+  
+  .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+  }
+  
+  .social-links a:hover {
+    color: #24262b;
+    background-color: #ffffff;
+  }
+  
+  .footer__ul {
+    list-style: none;
+  }
+  
+  .footer__a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  
+  .footer__a:hover {
+    color: #ffffff;
+    padding-left: 8px;
+  }
+  
+  footer .row {
+    height: 100%;
+  }
+  
+  .suc__img {
+    width: 400px;
+    height: 300px;
+    border-radius: 10px;
+  }
+  
+  /* MEDIA QUERYS */
+  #hamburgesa {
+    display: none;
+  }
+  
+  body {
+    background-color: #f7c5b93d !important;
+  }
+  
+  @media screen and (max-width: 960px) {
+    #ulheader {
+      display: none;
+    }
+    #hamburgesa {
+      display: block;
+      font-size: 40px;
+      background-color: #dc3545 ;
+      color: white;
+      margin-right: 10%;
+    }
+    .nosotros__p {
+      margin: 10px 0 10px 0;
+    }
+    #ulheader {
+      /* display: none; */
+      position: absolute;
+      right: +100%;
+      top: 16%;
+      width: 60%;
+      /* height: 40%; */
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      z-index: 99999;
+      background: #654342;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-evenly !important;
+      transition: all 0.5s;
+    }
+    .hero {
+      background-position-x: 60%;
+    }
+  }
+  
+  @media screen and (max-width: 500px) {
+    .suc__img {
+      width: 280px;
+      height: 250px;
+    }
+    #arreglo {
+      width: 300px;
+    }
+  }
+  /*# sourceMappingURL=estilos.css.map */
