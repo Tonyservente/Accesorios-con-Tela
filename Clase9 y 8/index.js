@@ -19,17 +19,19 @@ class ElementoCarrito {
  * Definiciones de constantes
  */
 const estandarDolaresAmericanos = Intl.NumberFormat('en-US');
+const contenedorProductos = document.getElementById('contenedor-productos');
+const contenedorCarritoCompras = document.querySelector("#items")
+const contenedorFooterCarrito = document.querySelector("#footer");
+const ulheader = document.getElementById("ulheader")
+const registro = document.getElementById("registro");
+const login = document.getElementById("login");
+const registronone = document.getElementById("registronone");
+const loginnone = document.getElementById("loginnone");
 
 //Arrays donde guardaremos catálogo de productos y elementos en carrito
+
 const elementosCarrito = [];
-
 const productos = [];
-
-const contenedorProductos = document.getElementById('contenedor-productos');
-
-const contenedorCarritoCompras = document.querySelector("#items")
-
-const contenedorFooterCarrito = document.querySelector("#footer");
 
 /**
  * Ejecución de funciones
@@ -125,7 +127,6 @@ function dibujarCarrito() {
     }
 
 }
-
 
 function crearCard(producto) {
     //Botón
@@ -227,16 +228,10 @@ function salir() {
       swal('Con tela joyeria \n\nGracias Por tu Visita. Te Esperamos Pronto!');
       return;
     } else {
-      swal('Con tela joyeria\n\nPuedes retirar tu pedido en Despacho! Gracias Por tu Compra, te Esperamos Pronto');
+      swal('Con tela joyeria\n\nPuedes retirar tu pedido en despacho. Gracias!');
       return;
     }
 }
-
-const registro = document.getElementById("registro");
-const login = document.getElementById("login");
-const registronone = document.getElementById("registronone");
-const loginnone = document.getElementById("loginnone");
-
 
 // CREO DOS EVENTOS PARA CUANDO SE HACE CLICK EN LOS BOTONES APARESCA O DESPARECAN LOS MODALES DEL REGISTRO Y LOGIN
 registro.addEventListener("click", () => {
@@ -261,17 +256,23 @@ formregistro.addEventListener("submit", registroform);
 const formlogin = document.getElementById("formLogin");
 formlogin.addEventListener("submit", loginform);    
 
+// CREO UN EVENTO PARA AGREGARLE O SACARLE  LA CLASE "MOVER" LA CUAL MUEVE LA LISTA -100%  Y LA PONE EN 0 
+const hamburgesa = document.getElementById("hamburgesa");
+hamburgesa.addEventListener("click", () => {
+    ulheader.classList.toggle('mover')
+});
+
 // HAGO UN STRINGIFY DE CARRITO  Y SE GUARDA EN LA KEY CARRITO
 
 function guardarCarritoEnLocalStorage() {
-    LocalStorage.setItem("carrito", JSON.stringify(carrito));
+    localStorage.setItem("carrito", JSON.stringify(elementosCarrito));
 }
 
 export function cargarCarritoDeLocalStorage() {
     // ¿Existe un carrito previo guardado en LocalStorage?
     if (LocalStorage.getItem("carrito") !== null) {
         // Carga la información
-        carrito = JSON.parse(LocalStorage.getItem("carrito"));
+        carrito = JSON.parse(localStorage.getItem("elementosCarrito"));
         actualizarCarrito();
     }
 }
