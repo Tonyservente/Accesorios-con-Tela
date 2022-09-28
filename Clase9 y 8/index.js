@@ -176,6 +176,7 @@ function crearCard(producto) {
             elementosCarrito.push(elementoCarrito);
         }
 
+
         dibujarCarrito();
 
         swal({
@@ -224,14 +225,9 @@ let comprafinalizada = document.getElementById(`comprafinalizada`);
 });
 
 function salir() {
-    if (elementosCarrito.length == 0) {
-      swal('Con tela joyeria \n\nGracias Por tu Visita. Te Esperamos Pronto!');
-      return;
-    } else {
+    elementosCarrito.length === 0 && swal('Con tela joyeria \n\nGracias Por tu Visita. Te Esperamos Pronto!') ||
       swal('Con tela joyeria\n\nPuedes retirar tu pedido en despacho. Gracias!');
-      return;
     }
-}
 
 // CREO DOS EVENTOS PARA CUANDO SE HACE CLICK EN LOS BOTONES APARESCA O DESPARECAN LOS MODALES DEL REGISTRO Y LOGIN
 registro.addEventListener("click", () => {
@@ -268,12 +264,9 @@ function guardarCarritoEnLocalStorage() {
     localStorage.setItem("carrito", JSON.stringify(elementosCarrito));
 }
 
-export function cargarCarritoDeLocalStorage() {
-    // ¿Existe un carrito previo guardado en LocalStorage?
-    if (LocalStorage.getItem("carrito") !== null) {
-        // Carga la información
-        carrito = JSON.parse(localStorage.getItem("elementosCarrito"));
+function cargarCarritoDeLocalStorage() {
+        carrito = JSON.parse(localStorage.getItem("elementosCarrito")) || [] ;
         actualizarCarrito();
-    }
 }
+
 
