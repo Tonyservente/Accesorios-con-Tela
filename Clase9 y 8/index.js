@@ -1,4 +1,3 @@
-
 class Producto {
     constructor(id, nombre, precio, foto) {
         this.id = id;
@@ -14,6 +13,18 @@ class ElementoCarrito {
         this.cantidad = cantidad;
     }
 }
+
+//Leo los productos desde productos.json y los cargo al array elementos del carrito
+
+fetch("./productos.json")
+.then(response => response.json())
+.then(data => {
+    data.forEach((Producto => {
+        productos.push(new Producto(Producto))
+    })
+
+})
+mostrarProducto("");
 
 /**
  * Definiciones de constantes

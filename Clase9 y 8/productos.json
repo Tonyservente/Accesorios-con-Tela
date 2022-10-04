@@ -1,0 +1,9 @@
+[
+    {"id": 1,  "nombre": "Moña",  "precio": 150, "foto": "./img/Moña.jpeg"},
+    {"id": 2,  "nombre": "Moñas",  "precio": 150, "foto": "./img/Moñas.jpg"},
+    {"id": 3,  "nombre": "Pulseras especiales",  "precio": 150, "foto": "./img/Pulseras especiales.jpg"},
+    {"id": 4,  "nombre": "Vinchas trenzada",  "precio": 220, "foto": "./img/Vincha trenzada.jpg"},
+    {"id": 5,  "nombre": "Vinchas Fancy",  "precio": 210, "foto": "./img/Vinchasfancy.jpg"},
+    {"id": 6,  "nombre": "Pulseras",  "precio": 100, "foto": "./img/pulseras.jpg"}
+  
+]

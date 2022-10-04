@@ -1,13 +1,10 @@
-import {
-    cargarCarritoDeLocalStorage,
-    agruparAsync,
-} from "../index"
-
+/* 
 let registro = document.getElementById("registro");
-let login = document.getElementById("login");
+let login = document.getElementById("login"); */
+
 
 //FUNCION QUE REGISTRA LOS DATOS INGRESADOS Y LOS GUARDA EN EL LOCALSTORAGE 
-export function registroform(e) {
+function registroform(e) {
     e.preventDefault(e);
     let formulario = e.target;
 
@@ -21,7 +18,7 @@ export function registroform(e) {
         localStorage.setItem("clave", formulario.children[4].value)
         let formularioStorage = JSON.stringify(localStorage.getItem("email"))
         console.log(formularioStorage);
-        Swal.fire({
+        swal.fire({
             position: 'center',
             icon: 'success',
             title: 'Te has registrado correctamente',
@@ -35,7 +32,7 @@ export function registroform(e) {
 
 
 //FUNCION QUE TOMA LOS DATOS INGRESADOS EN EL REGISTROFORM() Y LOS COMPARA CON LOS INGRESADOS EN EL LOGIN PARA PODER INGRESAR Y TOMAR EL CARRITO COMO LO TENIA
-export function loginform(e) {
+function loginform(e) {
     let formulario = e.target;
     e.preventDefault(e);
     if (((localStorage.getItem("email") == formulario.children[2].value)) && ((localStorage.getItem("clave") == formulario.children[4].value))) {
