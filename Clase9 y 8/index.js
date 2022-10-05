@@ -1,5 +1,7 @@
+const productos = [];
+
 class Producto {
-    constructor(id, nombre, precio, foto) {
+    constructor({id, nombre, precio, foto}) {
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
@@ -19,12 +21,12 @@ class ElementoCarrito {
 fetch("./productos.json")
 .then(response => response.json())
 .then(data => {
-    data.forEach((Producto => {
-        productos.push(new Producto(Producto))
-    })
+    data.forEach(producto => {
+        productos.push(new Producto(producto))
+    });
+    dibujarCatalogoProductos();
+});
 
-})
-mostrarProducto("");
 
 /**
  * Definiciones de constantes
@@ -42,13 +44,18 @@ const loginnone = document.getElementById("loginnone");
 //Arrays donde guardaremos catálogo de productos y elementos en carrito
 
 const elementosCarrito = [];
-const productos = [];
+
+function vaciarCarrito(){
+    elementosCarrito.length=0;
+    localStorage.clear();
+    mostrarCarrito();
+}
+
 
 /**
  * Ejecución de funciones
  */
 
-cargarProductos();
 cargarCarrito();
 if (localStorage.getItem('carrito')){
     let carrito=JSON.parse(localStorage.getItem('carrito'));
@@ -63,16 +70,6 @@ dibujarCatalogoProductos();
 /**
  * Definiciones de funciones
  */
-
-function cargarProductos() {
-    productos.push(new Producto(1, 'Moña', 150, './img/Moña.jpeg'));
-    productos.push(new Producto(2, 'Moñas', 150, './img/Moñas.jpg'));
-    productos.push(new Producto(3, 'Pulseras especiales', 150, './img/Pulseras especiales.jpg'));
-    productos.push(new Producto(4, 'Vinchas trenzada', 220, './img/Vincha trenzada.jpg'));
-    productos.push(new Producto(5, 'Vinchas Fancy', 210, './img/Vinchasfancy.jpg'));
-    productos.push(new Producto(6, 'Pulseras', 100, './img/pulseras.jpg'));
-   
-}
 
 function cargarCarrito() {
     /*let elementoCarrito = new ElementoCarrito(
@@ -240,6 +237,14 @@ function salir() {
       swal('Con tela joyeria\n\nPuedes retirar tu pedido en despacho. Gracias!');
     }
 
+
+//AL HACER CLICK AL BOTON RESETEO EL CARRITO EN 0 Y LO ACTUALIZO
+
+botonVaciar.addEventListener("click", () => {
+   vaciarCarrito();
+});
+
+
 // CREO DOS EVENTOS PARA CUANDO SE HACE CLICK EN LOS BOTONES APARESCA O DESPARECAN LOS MODALES DEL REGISTRO Y LOGIN
 registro.addEventListener("click", () => {
     registronone.classList.toggle("d-none");
@@ -278,6 +283,7 @@ function guardarCarritoEnLocalStorage() {
 function cargarCarritoDeLocalStorage() {
         carrito = JSON.parse(localStorage.getItem("elementosCarrito")) || [] ;
         actualizarCarrito();
+        
 }
 
 
