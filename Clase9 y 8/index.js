@@ -245,35 +245,6 @@ botonVaciar.addEventListener("click", () => {
 });
 
 
-// CREO DOS EVENTOS PARA CUANDO SE HACE CLICK EN LOS BOTONES APARESCA O DESPARECAN LOS MODALES DEL REGISTRO Y LOGIN
-registro.addEventListener("click", () => {
-    registronone.classList.toggle("d-none");
-    loginnone.classList.add("d-none");
-})
-
-login.addEventListener("click", () => {
-    loginnone.classList.toggle("d-none");
-    registronone.classList.add("d-none");
-})
-
-// ME TRAIGO EL FORMULARIO Y LUEGO AL HACER SUBMIT EJECUTO
-// LA FUNCION REGISTROFORM QUE TOMA EL VALUE Y LO GUARDA EN EL SESSION
-
-const formregistro = document.getElementById("formRegistro");
-formregistro.addEventListener("submit", registroform);
-
-// ME TRAIGO EL FORMULARIO LOGIN Y LUEGO DEL SUBMIT COMPARO LOS DATOS INGRESADOS EN EL SESSIONSTORE
-// CON LOS TARGET INGRESADOS EN EL FORMULARIO LOGIN
-
-const formlogin = document.getElementById("formLogin");
-formlogin.addEventListener("submit", loginform);    
-
-// CREO UN EVENTO PARA AGREGARLE O SACARLE  LA CLASE "MOVER" LA CUAL MUEVE LA LISTA -100%  Y LA PONE EN 0 
-const hamburgesa = document.getElementById("hamburgesa");
-hamburgesa.addEventListener("click", () => {
-    ulheader.classList.toggle('mover')
-});
-
 // HAGO UN STRINGIFY DE CARRITO  Y SE GUARDA EN LA KEY CARRITO
 
 function guardarCarritoEnLocalStorage() {

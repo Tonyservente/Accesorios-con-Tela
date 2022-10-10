@@ -9,10 +9,10 @@ function registroform(e) {
     let formulario = e.target;
 
     if ((!formulario.children[2].value) || (!formulario.children[4].value)) {
-        Swal.fire({
+        /*Swal.fire({
             icon: 'error',
             title: 'Debe completar todos los campos!',
-        })
+        })*/
     } else {
         localStorage.setItem("email", formulario.children[2].value)
         localStorage.setItem("clave", formulario.children[4].value)

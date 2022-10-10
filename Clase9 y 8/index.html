@@ -10,60 +10,65 @@
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script defer src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://kit.fontawesome.com/3147ed9d57.js" crossorigin="anonymous"></script>
+    <link id="avast_os_ext_custom_font" href="chrome-extension://eofcbnmajmjmplflapaojjnihcjkigck/common/ui/fonts/fonts.css" rel="stylesheet" type="text/css">
     <title>Con tela joyeria</title>
 </head>
 <body> 
-    <header class="d-flex align-items-center justify-content-between">
-            <img class="header__logo  align-self-start" src="./img/logo.png" alt="">
-            <div class="botoncitos">
-                <button id="registro" class="btn btn-danger mx-3"><i class="fa-solid fa-address-card"></i>
-                Registrate</button>
-                <a id="login" class="btn btn-danger"><i class="fa-solid fa-arrow-right-to-bracket "></i> Ingresa</a>
-            </div>
-            <ul id="ulheader" class="nav justify-content-end mx-5">
-                <li class="nav-item px-2">
-                    <a href="#horarios"><i class="fa-brands fa-creative-commons-by"></i></i> Quienes somos</a>
-                </li>
-                <li class="nav-item px-2">
-                    <a href="#Que ofrecemos"> <i class="fa-solid fa-tag"></i> Que ofrecemos</a>
-                </li>
-                <li class="nav-item px-2">
-                    <a href="#nosotros"><i class="fa-solid fa-person-circle-question"></i> Nosotros</a>
-                </li>
-            </ul>
-            <i id="hamburgesa" class="fa-solid fa-bars"></i>
-        </header>
-
-    <section class="hero d-flex justify-content-center align-items-center flex-column">
-        <h1 class="titulo text-center">Con Tela Joyeria te ofrece un producto hermoso y sustentable</h1>
-        <h3 class="subtitulo mt-3 text-center">Registrate para armar tu pedido!</h3>
-
-    </section>
-    <div class="registronone1">
-        <div id="registronone" class="container d-none mx-auto">
-            <form id="formRegistro" class="text-center formulario mx-auto">
-                <h2>Registro</h2>
-                <label for="fregistro" class="form-label mb-3">Usuario</label>
-                <input type="email" class="form-control mb-3" id="registro" aria-describedby="emailHelp">
-                <label for="clave" class="form-label mb-3">Contraseña</label>
-                <input type="password" class="form-control mb-3" id="clave">
-                <button type="submit" class="btn btn-danger">Registrar</button>
-            </form>
+    <!--NAVEGACIÓN-->
+        <header class="sticky-top header"> 
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="./index.html"> <img src="./img/Logoblack.png" class="logoContelaJoyeria" alt="logoContelaJoyeria"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center ">
+                    <li class="nav-item ">
+                      <a class="nav-link header__active header__navItem" aria-current="page" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link header__navItem" href="#Quiénes Somos">Quiénes Somos</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link header__navItem" href="#Productos">Productos</a>
+                    </li>
+                  </ul>
+                  <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Ingresar búsqueda" aria-label="Search">
+                    <button class="btn-outline-success header__botonBusqueda" type="submit">Buscar</button>
+                  </form>
+                </div>
+              </div>
+            </nav>
+       </header>
+      
+       <!--Carrusel-->
+      
+       <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./img/nav1.0.png" class="d-block tamaño-carusel"  alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./img/nav2.jpg" class="d-block tamaño-carusel" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./img/nav3.jpg" class="d-block tamaño-carusel" alt="...">
+          </div>
         </div>
-    </div>
-    <div id="loginnone" class="container loginnone d-none ">
-        <form id="formLogin" class="text-center formulario mx-auto">
-            <h2>Ingresar</h2>
-            <label for="login" class="form-label">Usuario</label>
-            <input type="email" class="form-control" id="login" aria-describedby="emailHelp">
-            <label for="contraseña2" class="form-label">Contraseña</label>
-            <input type="password" class="form-control mb-3" id="contraseña2">
-            <button type="submit" class="btn btn-danger">Ingresar</button>
-        </form>
-    </div>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -95,7 +100,7 @@
             
             </div>
             <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             <button type="button" class="btn btn-primary" id="comprafinalizada">Terminar compra</button>
             <button type="button" class="btn btn-danger" id="botonVaciar">Vaciar carrito</button>
             </div>
@@ -105,6 +110,71 @@
 
 <br />
 
+<div>
+    <h1 class="d-flex justify-content-center text-center h1 h1__index p-3"> Bienvenidos! </h1>
+</div>
+<section id="nosotros" class="container">   
+    <div class="text-center d-flex justify-content-center align-items-center nosotros__div">
+            <div>
+                <img class="nosotros__img" src="./img/posteo-7.jpg" alt="">
+            </div>
+            <div>
+            <p class="nosotros__p1">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, recusandae dolor!
+                Labore omnis sit fuga nemo quasi nulla reprehenderit voluptates illum dolore, voluptate consequatur
+                 atque ab iste nobis aperiam. Fugiat? </p>
+            <p class="nosotros__p">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Labore omnis sit fuga nemo quasi nulla reprehenderit voluptates illum dolore, voluptate consequatur
+                atque ab iste nobis aperiam. </p>
+            <p class="nosotros__p"> ..Nuestro propósito es ofrecer un producto sustentable
+                y realizado con amor para que te sientas cómoda y plena..</p>
+            </div>
+    </div>
+</section>
+<br />
+
+<div>
+    <h1 class="d-flex justify-content-center text-center h1 h1__index p-3"> Seguí los pasos para adquirir tu producto</h1>
+</div>
+
+<div class="container fluid">
+    <div class="row ">
+
+    <div class="col-md-6 col-lg-3 align-items-stretch card__compra">
+        <div class="card cards__shadow text-center p-3 cardCompra ">
+            <img src="./img/iconoEleccion.png" alt="imagen icono eleccion" class="compraImage align-self-center">
+            <h4 class="cardCompra__title">Elige el producto que deseas comprar</h4>
+            <p class="cardCompra__text fs-6">Haz clic en el botón de <strong>"Agregar"</strong>. Esto agregará el producto a tu carrito y te llevará al mismo.
+                Puedes seguir agregando otros productos al carrito o sino haz clic en <strong>"Iniciar Compra" </strong> para continuar con los pasos.</p>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3 align-items-stretch card__compra">
+        <div class="card cards__shadow text-center p-3 cardCompra">
+            <img src="./img/iconoPagos.png" alt="imagen icono pagos" class="compraImage align-self-center">
+            <h4 class="cardCompra__title">Elige el medio de pago a usar</h4>
+            <p class="cardCompra__text fs-6">Una vez seleccionado, haz clic en <strong>"Continuar"</strong>.
+                Revisa toda la información de la compra y vuelve a clickear en "Continuar".
+                Allí deberás completar los datos sobre la forma de pago elegida y al confirmar recibirás por correo los archivos.</p>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3 align-items-stretch card__compra">
+        <div class="card cards__shadow text-center p-3 cardCompra">
+            <img src="./img/iconoEnviar.png" alt="imagen icono envio" class="compraImage align-self-center">
+            <h4 class="cardCompra__title">Envío automático a tu casilla</h4>
+            <p class="cardCompra__text fs-6">Una vez acreditado el pago, encontrarás los links de descarga en el mail de <strong>"Confirmación de Compra"</strong>. Si el pago es por transferencia, es necesario que por favor nos envies el comprobante al mail contelaJoyeria@gmail.com</p>
+        </div>
+    </div>
+  
+
+  </div>
+</div>
+<br />
+<div>
+    <h1 class="d-flex justify-content-center text-center h1 h1__index p-3"> Productos </h1>
+</div>
 <section class="d-flex justify-content-center mt-5">
     <article class="container">
         <div id="contenedor-productos" class="row row-cols-1 row-cols-md-3 g-4" class="shadow">
@@ -113,15 +183,17 @@
                 <div class="card-body">
                     <h5>Moña</h5>
                     <p>$150 Pesos</p>
-                    <button class="btn btn-success">Comprar</button>
+                    <button class="btn-success">Comprar</button>
                 </div>
             </div>
         </div>
     </article>
 </section>
-<footer class="container-fluid footer">
-    <div class="row d-flex flex-row align-items-center">
-        <div class="col-12 col-lg-6 text-center">
+<br />
+<footer class="footer">
+    <div class="div-papa">
+    
+        <div class="text-center">
             <ul class="footer__ul">
                 <h4 class="footer__h4 titulos">Con Tela Joyeria</h4>
                 <li><a class="footer__a" href="#">Home</a> </li>
@@ -130,25 +202,21 @@
                 <li><a class="footer__a" href="#Quienes somos">Quienes somos</a> </li>
             </ul>
         </div>
-        <div class="col-12 col-lg-6 social-links text-center">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <!-- Button trigger modal -->
-               <button id="toggleMyModal" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                   Ver carrito de compras <i class="bi bi-bag-check-fill"></i>
-               </button>
+        <div class="social-links text-center">
+            <a href="#"><i class="fab fa-facebook-f icon"></i></a>
+            <a href="#"><i class="fab fa-twitter icon"></i></a>
+            <a href="#"><i class="fab fa-instagram icon"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in icon"></i></a>
         </div>
+        <button id="toggleMyModal" type="button" class="btn btn-primary btn-carrito" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-sharp fa-solid fa-cart-shopping"></i>
+        </button>
     </div>
 </footer>
-    
 </body>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
 </script>
 <script src="https://kit.fontawesome.com/80b37d9900.js" crossorigin="anonymous"></script>
-<script src="./js/registro.js"></script>
 <script src="./index.js" type="module"></script>
 </html> 
