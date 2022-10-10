@@ -1,3 +1,4 @@
+
 const productos = [];
 
 class Producto {
@@ -35,22 +36,14 @@ const estandarDolaresAmericanos = Intl.NumberFormat('en-US');
 const contenedorProductos = document.getElementById('contenedor-productos');
 const contenedorCarritoCompras = document.querySelector("#items")
 const contenedorFooterCarrito = document.querySelector("#footer");
-const ulheader = document.getElementById("ulheader")
-const registro = document.getElementById("registro");
-const login = document.getElementById("login");
-const registronone = document.getElementById("registronone");
-const loginnone = document.getElementById("loginnone");
 
 //Arrays donde guardaremos catálogo de productos y elementos en carrito
 
 const elementosCarrito = [];
 
-function vaciarCarrito(){
-    elementosCarrito.length=0;
-    localStorage.clear();
-    mostrarCarrito();
+function vaciarCarrito() {
+    contenedorCarritoCompras.innerHTML = "";
 }
-
 
 /**
  * Ejecución de funciones
