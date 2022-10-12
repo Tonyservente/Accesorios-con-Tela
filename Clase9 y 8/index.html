@@ -20,7 +20,7 @@
         <header class="sticky-top header"> 
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
               <div class="container-fluid">
-                <a class="navbar-brand" href="./index.html"> <img src="./img/LOGO-2 black.png" class="logoContelaJoyeria" alt="logoContelaJoyeria"></a>
+                <a class="navbar-brand" href="./index.html"> <img src="./img/logo2black.png" class="logoContelaJoyeria" alt="logoContelaJoyeria"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -30,7 +30,7 @@
                       <a class="nav-link header__active header__navItem" aria-current="page" href="#">Inicio</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link header__navItem" href="#Quiénes Somos">Quiénes Somos</a>
+                      <a class="nav-link header__navItem" href="#Bienvenidos">Bienvenidos</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link header__navItem" href="#Productos">Productos</a>
@@ -118,7 +118,7 @@
 <section id="nosotros" class="container">   
     <div class="text-center d-flex justify-content-center align-items-center nosotros__div">
             <div>
-                <img class="nosotros__img" src="./img/posteo-7.jpg" alt="">
+                <img class="nosotros__img cards__shadow" src="./img/posteo-7.jpg" alt="">
             </div>
             <div>
             <p class="nosotros__p1">
@@ -192,6 +192,92 @@
     </article>
 </section>
 <br />
+    <div>
+        <h1 class="d-flex justify-content-center text-center h1 h1__index p-3"> Contactate con nosotras </h1>
+    </div>
+    <div class="container-fluid espacio-margin">
+        <div class="row d-flex justify-content-around">
+
+
+            <div class="col-md-4 col-lg-6 m-2">
+                <img src="./img/contacto.jpg" alt="imagen de contacto" class="w-100 img__contacto">
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card text-start p-2 d-flex justify-content-center cards__cardContacto">
+            <form method="POST" action="/index.php" class="needs-validation mt-4" novalidate="">
+              <div>
+                <label id="userSex" class="textForm">SEXO:</label>
+                <input type="radio" name="campousersex" id="userSex" value="masculino"> Hombre
+                <input type="radio" name="campousersex" id="userSex" value="femenino"> Mujer
+              </div>
+                <div class="form-row pt-2">
+                    <div class="col-md-12">
+                        <label for="validarNombre" class="textForm">Nombres:<span class="red">*</span></label>
+                        <input type="text" class="form-control" id="validarNombre" name="validarNombre" required="">
+                    </div>
+                </div>
+            
+                <div class="form-row pt-2">
+                    <div class="col-md-12">
+                        <label for="validarApellidos" class="textForm">Apellidos:<span class="red">*</span></label>
+                        <input type="text" class="form-control" id="validarApellidos" name="validarApellidos" required="">
+                    </div>
+                </div>
+            
+                <div class="form-row pt-2">
+                    <div class="col-md-12">
+                        <label for="validarEmail" class="textForm">Email:<span class="red">*</span></label>
+                        <input type="email" class="form-control" id="validarEmail" name="validarEmail" required="">
+                    </div>
+                </div>
+            
+                <div class="form-row pt-2">
+                    <div class="col-md-12">
+                        <label for="validarTelefono" class="textForm">Teléfono:</label>
+                        <input type="number" class="form-control" id="validarTelefono" name="validarTelefono" max="999999999">
+                    </div>
+                </div>
+            
+                <div class="form-row pt-2">
+                    <div class="col-md-12">
+                        <label for="validarEstadoCivil" class="textForm">Estado Civil</label>
+                        <select id="validarEstadoCivil" class="custom-select" style="border: 0.5px solid rgb(155, 55, 105);" name="validarEstadoCivil">
+                            <option selected="" disabled="" value="Select">Selecciona tu estado civil</option>
+                            <option value="Solter">Soltero/a</option>
+                            <option value="Casad">Casado/a</option>
+                            <option value="Divorciad">Divorciado/a</option>
+                        </select>
+                    </div>
+                </div>
+            
+                <div class="form-row pt-2">
+                    <div class="col-md-12">
+                        <label for="validarAsunto" class="textForm">Asunto:</label>
+                        <input type="text" class="form-control" id="validarAsunto" name="validarAsunto" required="">
+                    </div>
+                </div>
+            
+                <div class="form-group pt-2">
+                    <label for="validationMensaje" class="textForm">Mensaje:<span class="red">*</span></label>
+                    <textarea class="form-control" id="validationMensaje" name="validationMensaje" rows="3" min="25" required=""></textarea>
+                </div>
+            
+                <div class="form-group mb-10 pt-3 pb-3">
+                    <button class="btn header__botonBusqueda" type="submit" name="submit">Enviar</button>
+                    <button class="btn header__botonBusqueda" type="reset" name="reset">Limpiar</button>
+                </div>
+            
+            </form>
+         </div>
+     </div>
+
+     <br>
+
+        </div>
+    </div>
+
 <footer class="footer">
     <div class="div-papa">
     
@@ -199,9 +285,9 @@
             <ul class="footer__ul">
                 <h4 class="footer__h4 titulos">Con Tela Joyeria</h4>
                 <li><a class="footer__a" href="#">Home</a> </li>
-                <li><a class="footer__a" href="#">Nuestro Local</a> </li>
-                <li><a class="footer__a" href="#Que ofrecemos">Que ofrecemos</a> </li>
-                <li><a class="footer__a" href="#Quienes somos">Quienes somos</a> </li>
+                <li><a class="footer__a" href="#Bienvenidos">Bienvenidos</a> </li>
+                <li><a class="footer__a" href="#Seguí los pasos">Seguí los pasos</a> </li>
+                <li><a class="footer__a" href="#Productos">Productos</a> </li>
             </ul>
         </div>
         <div class="social-links text-center">

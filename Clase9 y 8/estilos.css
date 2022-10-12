@@ -118,6 +118,14 @@
     animation: gradient 10s infinite cubic-bezier(0.62, 0.28, 0.23, 0.99) both; 
   }
 
+  .botonContacto {
+    background-color: #f57272; 
+  }
+  
+  .botonContacto:hover {
+    background-color: #d4145a; 
+  }
+
   .cards {
     background-color: white;
     align-content: center; 
@@ -128,33 +136,48 @@
     font-weight: bold;
     font-size: 1.1rem;
     color: #d4145a; 
-    }
-    .cards__cardText {
-    font-family: 'Lato', sans-serif;
-    font-size: 1rem; 
-    }
-    .cards__shadow {
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
-    }
-    .cards__shadow:hover {
-      box-shadow: 0 8px 16px 0 rgba(159, 0, 233, 0.4);
-      transition: 0.3s; 
-    }
-
-    .h1__index {
-      color: #f57272;
-      font-family: 'Sansita Swashed', cursive;
-    }
-  .tamaño-carusel {
-    width: 100%;
-    height: 80vh;
-    object-fit: cover;
   }
   
-  .nosotros {
-    display: flex; 
+  .cards__cardText {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem; 
+  }
+  .cards__shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+  }
+  .cards__shadow:hover {
+    box-shadow: 0 8px 16px 0 rgba(159, 0, 233, 0.4);
+    transition: 0.3s; 
+  }
+  .cards__cardContacto {
+    background-color: #fff2f8 !important;  
+    border: radius;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem; 
+  }
+  .cards__cardKit {
+    text-align: center;
+    background-color: #fff2f8;
+    margin: 1rem;
   }
 
+  .h1__index {
+    color: #f57272;
+    font-family: 'Sansita Swashed', cursive;
+  } 
+
+  .espacio-margin {
+    margin: 2rem;
+  }
+  .tamaño-carusel {
+    width: 100%;
+    height: 85vh;
+    object-fit: cover;
+  }
+
+  .nosotros {
+    display: flex; 
+  } 
   .nosotros__img {
     width: 100%;
     height: auto;
@@ -165,6 +188,9 @@
   .nosotros__p{
     margin: 2rem;
   }
+
+
+
 @keyframes gradient {
   0% {
     background-position: 0% 50%; }
@@ -300,8 +326,6 @@
     font-weight: bold; 
     padding-left: 8px;
   }
-
-  
   
   footer {
     height: 100%;

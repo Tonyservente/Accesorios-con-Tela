@@ -42,7 +42,8 @@ const contenedorFooterCarrito = document.querySelector("#footer");
 const elementosCarrito = [];
 
 function vaciarCarrito() {
-    contenedorCarritoCompras.innerHTML = "";
+    elementosCarrito.length = 0;
+    dibujarCarrito();
 }
 
 /**
