@@ -19,15 +19,35 @@ class ElementoCarrito {
 
 //Leo los productos desde productos.json y los cargo al array elementos del carrito
 
-fetch("./productos.json")
-.then(response => response.json())
-.then(data => {
-    data.forEach(producto => {
-        productos.push(new Producto(producto))
-    });
-    dibujarCatalogoProductos();
-});
+// fetch("./produtos.json")
+// .then(response => response.json())
+// .then(data => {
+//     data.forEach(producto => {
+//         productos.push(new Producto(producto))
+//     });
+//     dibujarCatalogoProductos();
+// }).catch(error => console.log(error));
 
+laodData("./productos.json")
+
+
+async function laodData(){
+
+    try{
+        const loadData = await fetch(rutaArchivo);
+
+        const data = await loadData.json()
+
+        data.forEach(producto => {
+            productos.push(new Producto(producto))
+        });
+        dibujarCatalogoProductos();
+
+    }catch(error){
+        
+       console.log('esto es un error', error)
+    }
+}
 
 /**
  * Definiciones de constantes
