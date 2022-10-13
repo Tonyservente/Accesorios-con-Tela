@@ -34,7 +34,7 @@ laodData("./productos.json")
 async function laodData(){
 
     try{
-        const loadData = await fetch(rutaArchivo);
+        const loadData = await fetch("./productos.json");
 
         const data = await loadData.json()
 
