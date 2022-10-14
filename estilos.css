@@ -9,6 +9,10 @@
   background-color: white; 
   }
 
+  .logoContelaJoyeria {
+    height: 80px;
+  }
+
  .header__navItem {
   font-family: 'Montserrat', sans-serif;
   font-size: 0.9rem;
