@@ -19,33 +19,41 @@
     
 
     <!--NAVEGACIÓN-->
-        <header class="sticky-top header"> 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-              <div class="container-fluid">
-                <a class="navbar-brand" href="./index.html"> <img src="./img/logo2black.png" class="logoContelaJoyeria" alt="logoContelaJoyeria"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"></button>
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center ">
-                    <li class="nav-item ">
-                      <a class="nav-link header__active header__navItem" aria-current="page" href="#">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link header__navItem" href="#Bienvenidos">Bienvenidos</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link header__navItem" href="#Productos">Productos</a>
-                    </li>
-                  </ul>
-                  <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Ingresar búsqueda" aria-label="Search">
-                    <button class="btn-outline-success header__botonBusqueda" type="submit">Buscar</button>
-                  </form>
+    <header class="header"> 
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+                <a class="navbar-brand" href="./index.html"> 
+                <img src="./img/logo2black.png" width="200px"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center ">
+                <li class="nav-item ">
+                  <a class="nav-link header__active header__navItem" aria-current="page" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link header__navItem" href="#Bienvenidos">Bienvenidos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link header__navItem" href="#Seguílospasos">Seguí los pasos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link header__navItem" href="#Productos">Productos</a>
+                </li>
+                <div class="d-flex">
+                    <button id="carritoCompras" type="button" class="btn-primary btn-carrito    " data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                    </button>  
                 </div>
-              </div>
-            </nav>
-       </header>
+              </ul>
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Ingresar búsqueda" aria-label="Search">
+                <button class="btn-outline-success header__botonBusqueda" type="submit">Buscar</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+   </header>
       
        <!--Carrusel-->
       
@@ -298,7 +306,7 @@
             <a href="#"><i class="fab fa-instagram icon"></i></a>
             <a href="#"><i class="fab fa-linkedin-in icon"></i></a>
         </div>
-        <button id="toggleMyModal" type="button" class="btn-primary btn-carrito" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-sharp fa-solid fa-cart-shopping"></i>
+        <button id="carritoCompras" type="button" class="btn-primary btn-carrito" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-sharp fa-solid fa-cart-shopping"></i>
         </button>
     </div>
     <div class="pie">
