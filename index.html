@@ -7,10 +7,9 @@
     <meta name="description" content="Con Tela Joyeria es un producto artesanal y ecológico producido con la intención de preservar el medio ambiente. Realizado con amor y ética. ">
     <meta name="viewport" content="moñas de pelo, vinchas, accesorios de tela, joyería con tela">
     <title>Con tela joyeria</title>
-    <link rel="stylesheet" href="estilos.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <link id="avast_os_ext_custom_font" href="chrome-extension://eofcbnmajmjmplflapaojjnihcjkigck/common/ui/fonts/fonts.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body> 
     
@@ -43,10 +42,7 @@
                     </button>  
                 </div>
               </ul>
-              <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Ingresar búsqueda" aria-label="Search">
-                <button class="btn-outline-success header__botonBusqueda" type="submit">Buscar</button>
-              </form>
+             
             </div>
           </div>
         </nav>
@@ -125,17 +121,20 @@
 <section id="nosotros" class="container">   
     <div class="text-center d-flex justify-content-center align-items-center nosotros__div">
             <div>
-                <img class="nosotros__img cards__shadow" src="./img/posteo-7.jpg" alt="">
+                <img class="nosotros__img cards__shadow" src="./img/posteo-7.jpg" alt="soylore">
             </div>
             <div>
             <p class="nosotros__p1">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, recusandae dolor!
-                Labore omnis sit fuga nemo quasi nulla reprehenderit voluptates illum dolore, voluptate consequatur
-                 atque ab iste nobis aperiam. Fugiat? </p>
+                Soy Lore, somos Con Tela Joyería 
+            </p>
             <p class="nosotros__p">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Labore omnis sit fuga nemo quasi nulla reprehenderit voluptates illum dolore, voluptate consequatur
-                atque ab iste nobis aperiam. </p>
+                Hola gente linda, muy buenas. Llegó el momento que me presento ante ustedes, que lindo. 
+
+                La realidad es que no estoy sola, detrás de este proyecto hecho realidad hay un equipo lleno de valor y ganas de romperla. Hay personas comprometidas y profesionales haciendo este trabajo para que puedas conectar con lo artesanal y lo creativo. 
+                En este lugar no solo encontrarás accesorios de buena calidad, sino que te identificarás con un estilo que no abandonarás. El 80% de las personas nos prefieren porque reciclamos, cuidamos y amamos nuestros accesorios. Todo está hecho con amor por manos jóvenes, mujeres y emprendedoras llenas de vida. 
+                A todo esto, toda mujer debe saber que los accesorios permiten no sólo completar un look sino mantener un estilo original, único y atractivo para potenciar la expresión de tu personalidad.
+                Entonces ¿cuándo será el mejor momento para darte el estilo que te mereces y llenarte de accesorios hermosos hechos con tela? 
+                Nosotras somos tu mejor decisión, te aseguro: vas amar nuestros accesorios.</p>
             <p class="nosotros__p"> ..Nuestro propósito es ofrecer un producto sustentable
                 y realizado con amor para que te sientas cómoda y plena..</p>
             </div>
@@ -176,13 +175,24 @@
             <p class="cardCompra__text fs-6">Una vez acreditado el pago, encontrarás los links de descarga en el mail de <strong>"Confirmación de Compra"</strong>. Si el pago es por transferencia, es necesario que por favor nos envies el comprobante al mail contelaJoyeria@gmail.com</p>
         </div>
     </div>
-  
-
+    <div class="col-md-6 col-lg-3 align-items-stretch">
+        <div class="card cards__shadow text-center p-3 cardCompra">
+            <img src="../img/iconoCompletar.png" alt="imagen icono completar" class="compraImage align-self-center">
+            <h4 class="cardCompra__title">Completa tus datos de contacto</h4>
+            <p class="cardCompra__text fs-6">Ingresa la dirección de e-mail para cualquier tipo de consultas. Luego haz clic en <strong>"Enviar"</strong>. No olvides revisar la casilla de SPAM si ves que no te ha llegado luego de un largo rato de espera.</p>
+        </div>
+    </div>
   </div>
 </div>
 <br />
 <div>
     <h1 class="d-flex justify-content-center text-center h1 h1__index p-3"> Productos </h1>
+    <div class="d-flex col-6 text-center justify-content-center">
+        <form class="d-flex">
+            <input class="form-control me-2" id="input__buscar" type="search" placeholder="Ingresar búsqueda" aria-label="Search">
+            <button class="btn-outline-success header__botonBusqueda" id="buscar" type="submit">Buscar</button>
+          </form>
+    </div>
 </div>
 <section class="d-flex justify-content-center mt-5">
     <article class="container">
@@ -313,7 +323,6 @@
 </body>
 <script defer src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="https://kit.fontawesome.com/3147ed9d57.js" crossorigin="anonymous"></script>
-<script src="https://kit.fontawesome.com/80b37d9900.js" crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">

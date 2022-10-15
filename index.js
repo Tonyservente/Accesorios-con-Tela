@@ -1,8 +1,8 @@
 
-const productos = [];
+var productos = [];
 
 class Producto {
-    constructor({id, nombre, precio, foto}) {
+    constructor({id, nombre , precio , foto }) {
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
@@ -17,24 +17,56 @@ class ElementoCarrito {
     }
 }
 
-//Leo los productos desde productos.json y los cargo al array elementos del carrito
+// En caso de utilizar una API utilizo los siguientes datos
 
-// fetch("./produtos.json")
-// .then(response => response.json())
-// .then(data => {
-//     data.forEach(producto => {
-//         productos.push(new Producto(producto))
-//     });
-//     dibujarCatalogoProductos();
-// }).catch(error => console.log(error));
+// class Producto {
+//     constructor({id, title , price , images }) {
+//         this.id = id;
+//         this.nombre = title;
+//         this.precio = price;
+//         this.foto = images[0];
+//     }
+// }
+// loadData()
+
+
+// async function loadData(value=""){
+
+//     try{
+//         const data = await fetch('https://dummyjson.com/products/search?q=' + value);
+//         const dataProductos = await data.json()
+//         console.log(dataProductos.products)
+//         const productsList = dataProductos.products
+//         productos = [];
+//         productsList.forEach(producto => {
+//             productos.push(new Producto(producto))
+//         });
+//         dibujarCatalogoProductos();
+
+//     }catch(error){
+        
+//        console.log('esto es un error', error)
+//     }
+// }
+
+// document.getElementById('buscar').addEventListener("click" , (e) => {
+//     e.preventDefault();
+//     console.log("evento");
+//     const value = document.getElementById('input__buscar').value
+//     loadData(value)
+// });
+  
+
+
+//Leo los productos desde productos.json y los cargo al array elementos del carrito
 
 laodData("./productos.json")
 
 
-async function laodData(){
+async function laodData(ruta){
 
     try{
-        const loadData = await fetch("./productos.json");
+        const loadData = await fetch(ruta);
 
         const data = await loadData.json()
 
@@ -48,6 +80,18 @@ async function laodData(){
        console.log('esto es un error', error)
     }
 }
+
+
+
+
+// fetch("./produtos.json")
+// .then(response => response.json())
+// .then(data => {
+//     data.forEach(producto => {
+//         productos.push(new Producto(producto))
+//     });
+//     dibujarCatalogoProductos();
+// }).catch(error => console.log(error));
 
 /**
  * Definiciones de constantes
@@ -170,8 +214,7 @@ function crearCard(producto) {
     imagen.src = producto.foto;
     imagen.className = "card-img-top";
     imagen.alt = producto.nombre;
-
-    //Card
+    imagen.style = "width: 200px; height: 200px;"
     let carta = document.createElement("div");
     carta.className = "card m-2 p-2";
     carta.style = "width: 18rem";
@@ -241,23 +284,23 @@ function dibujarCatalogoProductos() {
 
 }
 
-let comprafinalizada = document.getElementById(`comprafinalizada`);
-    comprafinalizada.addEventListener('click', () => {
-         salir();
-});
-
 function salir() {
     elementosCarrito.length === 0 && swal('Con tela joyeria \n\nGracias Por tu Visita. Te Esperamos Pronto!') ||
-      swal('Con tela joyeria\n\nPuedes retirar tu pedido en despacho. Gracias!');
-    }
+    swal('Con tela joyeria\n\nPuedes retirar tu pedido en despacho. Gracias!');
+    vaciarCarrito();
+}
 
 
 //AL HACER CLICK AL BOTON RESETEO EL CARRITO EN 0 Y LO ACTUALIZO
 
 botonVaciar.addEventListener("click", () => {
-   vaciarCarrito();
+    vaciarCarrito();
 });
 
+let comprafinalizada = document.getElementById(`comprafinalizada`);
+    comprafinalizada.addEventListener('click', () => {
+         salir();
+});
 
 // HAGO UN STRINGIFY DE CARRITO  Y SE GUARDA EN LA KEY CARRITO
 
