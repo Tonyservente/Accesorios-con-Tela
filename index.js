@@ -81,8 +81,7 @@ async function laodData(ruta){
     }
 }
 
-
-
+// Otra forma de leer productos.json
 
 // fetch("./produtos.json")
 // .then(response => response.json())
@@ -93,26 +92,22 @@ async function laodData(ruta){
 //     dibujarCatalogoProductos();
 // }).catch(error => console.log(error));
 
-/**
- * Definiciones de constantes
- */
-const estandarDolaresAmericanos = Intl.NumberFormat('en-US');
+
+
+//Definiciones de constantes
+
 const contenedorProductos = document.getElementById('contenedor-productos');
 const contenedorCarritoCompras = document.querySelector("#items")
 const contenedorFooterCarrito = document.querySelector("#footer");
+const estandarDolaresAmericanos = Intl.NumberFormat('en-US');
 
 //Arrays donde guardaremos catálogo de productos y elementos en carrito
 
 const elementosCarrito = [];
 
-function vaciarCarrito() {
-    elementosCarrito.length = 0;
-    dibujarCarrito();
-}
 
-/**
- * Ejecución de funciones
- */
+
+ //Ejecución de funciones
 
 cargarCarrito();
 if (localStorage.getItem('carrito')){
@@ -125,9 +120,7 @@ if (localStorage.getItem('carrito')){
 dibujarCarrito();
 dibujarCatalogoProductos();
 
-/**
- * Definiciones de funciones
- */
+ //Definiciones de funciones
 
 function cargarCarrito() {
     /*let elementoCarrito = new ElementoCarrito(
@@ -136,6 +129,11 @@ function cargarCarrito() {
     );
 
     elementosCarrito.push(elementoCarrito);*/
+}
+
+function vaciarCarrito() {
+    elementosCarrito.length = 0;
+    dibujarCarrito();
 }
 
 function dibujarCarrito() {
@@ -269,7 +267,6 @@ function crearCard(producto) {
 
     }
     return carta;
-
 }
 
 function dibujarCatalogoProductos() {
@@ -281,7 +278,6 @@ function dibujarCatalogoProductos() {
             contenedorProductos.append(contenedorCarta);
         }
     );
-
 }
 
 function salir() {
@@ -289,7 +285,6 @@ function salir() {
     swal('Con tela joyeria\n\nPuedes retirar tu pedido en despacho. Gracias!');
     vaciarCarrito();
 }
-
 
 //AL HACER CLICK AL BOTON RESETEO EL CARRITO EN 0 Y LO ACTUALIZO
 
@@ -311,7 +306,6 @@ function guardarCarritoEnLocalStorage() {
 function cargarCarritoDeLocalStorage() {
         carrito = JSON.parse(localStorage.getItem("elementosCarrito")) || [] ;
         actualizarCarrito();
-        
 }
 
 

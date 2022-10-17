@@ -182,15 +182,14 @@
   } 
   .nosotros__img {
     width: 100%;
-    height: auto;
+    height: 100%;
   }
   .nosotros__p1{
-    margin: 0 2rem 2rem;
+    margin: 1rem;
   }
   .nosotros__p{
     margin: 2rem;
   }
-
 
 
 @keyframes gradient {
@@ -326,16 +325,6 @@
     font-weight: bold; 
     padding-left: 8px;
   }
-  
-  footer {
-    height: 100%;
-    width: 100%;
-    background-color: white;
-  }
-  p {
-    text-align: center;
-    display: block;
-  }
 
  
 @media only screen and (max-width: 768px) {
@@ -401,7 +390,10 @@
   .productosGeneral {
     margin: 50px; 
   } 
-
+  .container {
+    display: flex;
+  }
+  
   footer {
     height: 100%;
     width: 100%;
